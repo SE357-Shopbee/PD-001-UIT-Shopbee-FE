@@ -34,5 +34,5 @@ export default {
       Banner: "#FFFFFF",
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [],
 } satisfies Config;
