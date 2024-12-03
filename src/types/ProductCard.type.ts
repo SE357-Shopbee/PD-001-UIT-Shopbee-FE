@@ -3,6 +3,6 @@ export type ProductCardProps = {
   nameProduct: string,
   image: string,
   unitPrice: number,
-  listSpecificProduct: number,
+  specificCoupon: number,
   listCoupon: number[],
 };

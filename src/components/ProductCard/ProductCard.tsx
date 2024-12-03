@@ -4,7 +4,7 @@ import { ProductCardProps } from "@/types";
 import { classNames } from "@/components/classNames";
 
 const ProductCard = ({ product }: { product: ProductCardProps }) => {
-  const { id, nameProduct, image, unitPrice, listSpecificProduct, listCoupon } =
+  const { id, nameProduct, image, unitPrice, specificCoupon, listCoupon } =
     product;
 
   const maxCouponDiscount = Math.max(...listCoupon) / 1000;
@@ -18,9 +18,9 @@ const ProductCard = ({ product }: { product: ProductCardProps }) => {
 
   const lastPrice = (
     unitPrice: number,
-    listSpecificProduct: number
+    specificCoupon: number
   ): number => {
-    return unitPrice * (1 - listSpecificProduct / 100);
+    return unitPrice * (1 - specificCoupon / 100);
   };
 
   return (
@@ -52,14 +52,14 @@ const ProductCard = ({ product }: { product: ProductCardProps }) => {
       <div className="absolute top-0 right-0 font-light text-sm">
         <div
           className={classNames(
-            listSpecificProduct ? "px-3 py-1 bg-Surface text-Error" : "px-3 py-1 bg-Surface text-Surface"
+            specificCoupon ? "px-3 py-1 bg-Surface text-Error" : "px-3 py-1 bg-Surface text-Surface"
           )}
         >
-          {listSpecificProduct ? listSpecificProduct : 0}%
+          {specificCoupon ? specificCoupon : 0}%
         </div>
       </div>
       <div className="p-3 font-normal text-Error">
-        <div>{formattedNumber(lastPrice(unitPrice, listSpecificProduct))} VND</div>
+        <div>{formattedNumber(lastPrice(unitPrice, specificCoupon))} VND</div>
       </div>
     </div>
   );
