@@ -1,14 +1,53 @@
 "use client";
 import Image from "next/image";
-import { Input, InputRadio } from "@/components";
-
-const dataRadio = ['hehe', 'haha', 'hihi', 'hoho'];
+import {
+  ButtonSolid,
+  Input,
+  InputRadio,
+  ButtonBase,
+  ButtonOutline,
+  ProductCard,
+  CategoryCard,
+  CategoryModal,
+} from "@/components";
+import { XMarkIcon, CheckIcon } from "@heroicons/react/24/solid";
+import { products, getProductById } from "@/data/ProductCard.data";
+import {
+  categories,
+  getAllCategory,
+  getCategoryById,
+} from "@/data/Category.data";
+import { useEffect, useState } from "react";
+import { CategoryProps } from "@/types";
 
 export default function Home() {
+  const [category, setCategory] = useState<CategoryProps[]>([]);
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+
+  const handleOpenModal = () => {
+    setIsOpenModal(true);
+  };
+  const handleCloseModal = () => {
+    setIsOpenModal(false);
+  };
+  const handleModal = (ModalCategory?: CategoryProps[]) => {
+    ModalCategory ? setCategory(ModalCategory) : "";
+    setIsOpenModal(false);
+  };
+
+  useEffect(() => {
+    console.log('category: ', category);
+  }, [category]);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20]">
-      <Input title="Username" placeholder="Enter" onChange={() => {}} classNameInput="w-[500px]" />
-      <InputRadio title="Test" value={dataRadio} onChange={() => {}} classNameInput="w-[500px]"/>
+    <div className="flex justify-center items-center bg-Secondary">
+      <ButtonSolid content="Open Modal" onClick={() => handleOpenModal()} />
+      <ButtonSolid content="Close Modal" onClick={() => handleCloseModal()} />
+      <CategoryModal
+        isOpenModal={isOpenModal}
+        setIsOpenModal={setIsOpenModal}
+        onSubmit={handleModal}
+      />
     </div>
   );
 }

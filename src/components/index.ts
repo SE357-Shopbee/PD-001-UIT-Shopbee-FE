@@ -1,3 +1,4 @@
+import { CategoryModal } from "@/components/Modal";
 import { Input, InputRadio } from "@/components/Input";
 import { ButtonBase, ButtonOutline, ButtonSolid } from "@/components/Button";
 import { Pagination } from "@/components/Pagination";
@@ -9,3 +10,4 @@ export { ButtonBase, ButtonOutline, ButtonSolid };
 export { Pagination };
 export { ProductCard };
 export { CategoryCard };
+export { CategoryModal };
