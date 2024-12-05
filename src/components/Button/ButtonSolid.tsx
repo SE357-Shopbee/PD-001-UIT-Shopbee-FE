@@ -7,6 +7,7 @@ const ButtonSolid = ({
   isPrimary = false,
   isDisabled = false,
   className = "",
+  classNameText = "",
   iconLeft,
   iconRight,
   onClick,
@@ -18,6 +19,7 @@ const ButtonSolid = ({
       iconLeft={iconLeft}
       iconRight={iconRight}
       onClick={onClick}
+      classNameText={classNameText}
       className={classNames(
         "text-OnSurface",
         isPrimary ? "bg-Secondary" : "bg-OutlineFocus",
