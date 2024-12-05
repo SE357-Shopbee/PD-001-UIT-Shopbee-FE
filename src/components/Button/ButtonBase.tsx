@@ -4,6 +4,7 @@ import { classNames } from "@/components/classNames";
 const ButtonBase = ({
   content,
   className = "",
+  classNameText = "",
   isPrimary = false,
   isDisabled = false,
   iconLeft,
@@ -21,7 +22,7 @@ const ButtonBase = ({
       onClick={onClick}
     >
       {iconLeft}
-      {content}
+      <div className={classNameText}>{content}</div>
       {iconRight}
     </button>
   );

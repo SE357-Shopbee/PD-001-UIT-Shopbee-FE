@@ -7,6 +7,7 @@ const ButtonOutline = ({
   isPrimary = false,
   isDisabled = false,
   className = "",
+  classNameText = "",
   iconLeft,
   iconRight,
   onClick,
@@ -18,6 +19,7 @@ const ButtonOutline = ({
       iconLeft={iconLeft}
       iconRight={iconRight}
       onClick={onClick}
+      classNameText={classNameText}
       className={classNames(
         "outline outline-Outline outline-1",
         isPrimary
