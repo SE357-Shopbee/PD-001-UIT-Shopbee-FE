@@ -103,7 +103,11 @@ const CategoryModal = ({
   return (
     <>
       {isOpen && (
-        <div className="flex items-center justify-center">
+        <div
+          className={`${
+            isOpen ? "flex" : "hidden"
+          } fixed inset-0 justify-center items-center bg-opacity-50 backdrop-blur-sm z-50`}
+        >
           <Modal
             isDismissable={false}
             isKeyboardDismissDisabled={true}
@@ -111,18 +115,18 @@ const CategoryModal = ({
             onOpenChange={onOpenChange}
             hideCloseButton={true}
             backdrop={"blur"}
-            className="flex items-center justify-center"
+            className="relative justify-center items-center"
           >
             <ModalContent>
               <>
-                <div className="w-3/5">
-                  <ModalHeader className="border-t border-l border-r border-Outline">
-                    <div className="p-1 px-4 text-lg text-OnSurface font-normal">
+                <div className="w-3/5 border border-Outline bg-Banner">
+                  <ModalHeader className="">
+                    <div className="p-3 px-4 text-lg text-OnSurface font-normal">
                       Category
                     </div>
                   </ModalHeader>
 
-                  <ModalBody className="border border-r border-l border-Outline">
+                  <ModalBody className="">
                     <div className="px-4">
                       <div className="flex justify-between p-2 bg-Primary">
                         <div className="flex flex-col flex-1 pl-2 items-start bg-Banner border-r-[1px] border-OnSurface">
@@ -132,7 +136,14 @@ const CategoryModal = ({
                               content={category.categoryName}
                               iconRight={<RiArrowRightSLine />}
                               className="justify-between font-medium w-full"
-                              classNameText="flex-grow text-left"
+                              classNameText={classNames(
+                                "flex-grow text-left",
+                                isBreadcrumb.find(
+                                  (cate) => cate.id === category.id
+                                )
+                                  ? "text-Secondary"
+                                  : ""
+                              )}
                               onClick={() =>
                                 handleSubCategory({
                                   level: 1,
@@ -150,7 +161,14 @@ const CategoryModal = ({
                                 content={category.categoryName}
                                 iconRight={<RiArrowRightSLine />}
                                 className="justify-between font-medium w-full"
-                                classNameText="flex-grow text-left"
+                                classNameText={classNames(
+                                  "flex-grow text-left",
+                                  isBreadcrumb.find(
+                                    (cate) => cate.id === category.id
+                                  )
+                                    ? "text-Secondary"
+                                    : ""
+                                )}
                                 onClick={() =>
                                   handleSubCategory({
                                     level: 2,
@@ -168,7 +186,14 @@ const CategoryModal = ({
                                 content={category.categoryName}
                                 iconRight={<RiArrowRightSLine />}
                                 className="justify-between font-medium w-full"
-                                classNameText="flex-grow text-left"
+                                classNameText={classNames(
+                                  "flex-grow text-left",
+                                  isBreadcrumb.find(
+                                    (cate) => cate.id === category.id
+                                  )
+                                    ? "text-Secondary"
+                                    : ""
+                                )}
                                 onClick={() =>
                                   handleSubCategory({
                                     level: 3,
@@ -186,7 +211,14 @@ const CategoryModal = ({
                                 content={category.categoryName}
                                 iconRight={<RiArrowRightSLine />}
                                 className="justify-between font-medium w-full"
-                                classNameText="flex-grow text-left"
+                                classNameText={classNames(
+                                  "flex-grow text-left",
+                                  isBreadcrumb.find(
+                                    (cate) => cate.id === category.id
+                                  )
+                                    ? "text-Secondary"
+                                    : ""
+                                )}
                                 onClick={() =>
                                   handleSubCategory({
                                     level: 4,
@@ -200,31 +232,31 @@ const CategoryModal = ({
                     </div>
                   </ModalBody>
 
-                  <ModalFooter className="border border-Outline">
-                    <div className="flex justify-between">
-                      <div className="flex">
-                        <div className="p-1 px-4 text-lg text-OnSurface font-normal">
+                  <ModalFooter className="flex">
+                    <div className="flex justify-between w-full">
+                      <div className="flex items-center">
+                        <div className="p-3 px-4 text-lg text-OnSurface font-normal">
                           Selected:
                         </div>
-                        <div className="py-1 text-lg text-OnSurface font-normal">
+                        <div className="py-3 text-lg text-OnSurface font-normal">
                           {isBreadcrumb
                             .map((category) => category.categoryName)
                             .join(" > ")}
                         </div>
                       </div>
                       <div className="flex">
-                        <div className="p-1 px-4">
+                        <div className="p-3 px-4">
                           <ButtonOutline
                             content="Canceled"
-                            className="rounded-sm text-xl font-light text-OnSurface w-[124px] h-[40px]"
+                            className="rounded-sm text-xl font-light text-OnSurface w-[124px] h-[30px]"
                             classNameText="flex-grow text-center font-light"
                             onClick={() => handleCloseModal()}
                           />
                         </div>
-                        <div className="p-1 px-4">
+                        <div className="p-3 px-4">
                           <ButtonSolid
                             content="Confirm"
-                            className="rounded-sm text-xl font-light bg-Secondary text-Banner w-[124px] h-[40px]"
+                            className="rounded-sm text-xl font-light bg-Secondary text-Banner w-[124px] h-[30px]"
                             classNameText="flex-grow text-center font-light"
                             onClick={() => {
                               if (onSubmit) {
