@@ -40,7 +40,7 @@ export default function Home() {
   }, [category]);
 
   return (
-    <div className="flex justify-center items-center bg-Secondary">
+    <div className="flex justify-center items-center w-[1920px] h-[1080px] bg-Secondary">
       <ButtonSolid content="Open Modal" onClick={() => handleOpenModal()} />
       <ButtonSolid content="Close Modal" onClick={() => handleCloseModal()} />
       <CategoryModal
