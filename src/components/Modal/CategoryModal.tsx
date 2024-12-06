@@ -248,7 +248,7 @@ const CategoryModal = ({
                         <div className="p-3 px-4">
                           <ButtonOutline
                             content="Canceled"
-                            className="rounded-sm text-xl font-light text-OnSurface w-[124px] h-[30px]"
+                            className="rounded-sm text-xl text-OnSurface w-[124px] h-[30px] hover:border-Outline hover:bg-Surface hover:text-OnPrimary"
                             classNameText="flex-grow text-center font-light"
                             onClick={() => handleCloseModal()}
                           />
