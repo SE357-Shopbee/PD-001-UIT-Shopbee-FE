@@ -1,3 +1,4 @@
+import { BreadcrumbProps } from './Breadcrumb.type';
 import { ProductCardProps } from "./ProductCard.type";
 import { PaginationProps } from "./Pagination.type";
 import { InputProps } from "@/types/Input.type";
@@ -11,3 +12,4 @@ export type { PaginationProps };
 export type { ProductCardProps };
 export type { CategoryProps };
 export type { ModalProps };
+export type { BreadcrumbProps };
