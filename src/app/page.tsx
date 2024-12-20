@@ -9,7 +9,8 @@ import {
   ProductCard,
   CategoryCard,
   CategoryModal,
-  Breadcrumb
+  Breadcrumb,
+  SignInButton
 } from "@/components";
 import { XMarkIcon, CheckIcon } from "@heroicons/react/24/solid";
 import { products, getProductById } from "@/data/ProductCard.data";
@@ -52,6 +53,9 @@ export default function Home() {
       /> */}
       <div className="w-3/5 h-full bg-Banner">
         <Breadcrumb id={breadcrumbsData[0].id} categoryProduct={breadcrumbsData[0].categoryProduct} productName={breadcrumbsData[0].productName}/>
+      </div>
+      <div className="bg-Surface">
+        <SignInButton/>
       </div>
     </div>
   );
