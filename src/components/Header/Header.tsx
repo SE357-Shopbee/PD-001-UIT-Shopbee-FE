@@ -35,8 +35,8 @@ const Header = () => {
           height={60}
         />
         <div className="flex flex-row">
-          <span className="text-5xl font-bold text-Secondary">Shop</span>
-          <span className="text-5xl font-bold text-OnSurface">Bee</span>
+          <span className="text-3xl font-bold text-Secondary">Shop</span>
+          <span className="text-3xl font-bold text-OnSurface">Bee</span>
         </div>
       </div>
       <div className=" flex w-full items-center justify-center gap-2">

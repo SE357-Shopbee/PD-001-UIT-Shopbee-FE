@@ -10,7 +10,8 @@ import { Pagination } from "@/components/Pagination";
 import { ProductCard } from "@/components/ProductCard";
 import { CategoryCard } from "@/components/CategoryCard";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { Header } from "@/components/Header";
+import { Header, HeaderUser } from "@/components/Header";
+import { classNames } from "@/components/classNames";
 
 export { Input, InputRadio };
 export { ButtonBase, ButtonOutline, ButtonSolid, SignInButton };
@@ -19,4 +20,5 @@ export { ProductCard };
 export { CategoryCard };
 export { CategoryModal };
 export { Breadcrumb };
-export { Header };
+export { Header, HeaderUser };
+export { classNames };
