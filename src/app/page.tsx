@@ -11,7 +11,8 @@ import {
   CategoryModal,
   Breadcrumb,
   SignInButton,
-  Header
+  Header,
+  HeaderUser,
 } from "@/components";
 import { XMarkIcon, CheckIcon } from "@heroicons/react/24/solid";
 import { products, getProductById } from "@/data/ProductCard.data";
@@ -40,12 +41,15 @@ export default function Home() {
   };
 
   useEffect(() => {
-    console.log('category: ', category);
+    console.log("category: ", category);
   }, [category]);
 
   return (
-    <div className="flex justify-center items-center w-[1920px] h-[1080px] bg-OutlineFocus">
-      <Header/>
+    <div className="flex flex-col justify-center w-full h-full bg-OutlineFocus">
+      <div className="flex flex-col items-center justify-center">
+        <HeaderUser />
+        <Header />
+      </div>
     </div>
   );
 }
