@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../styles/globals.css";
 import { poppins } from "@/app/Font";
-import SProviders from "@/providers/SessionProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-poppins`}>
-        <SProviders>{children}</SProviders>
+        {children}
       </body>
     </html>
   );

@@ -10,7 +10,8 @@ import {
   CategoryCard,
   CategoryModal,
   Breadcrumb,
-  SignInButton
+  SignInButton,
+  Header
 } from "@/components";
 import { XMarkIcon, CheckIcon } from "@heroicons/react/24/solid";
 import { products, getProductById } from "@/data/ProductCard.data";
@@ -43,20 +44,8 @@ export default function Home() {
   }, [category]);
 
   return (
-    <div className="flex justify-center items-center w-[1920px] h-[1080px] bg-Secondary">
-      {/* <ButtonSolid content="Open Modal" onClick={() => handleOpenModal()} />
-      <ButtonSolid content="Close Modal" onClick={() => handleCloseModal()} />
-      <CategoryModal
-        isOpenModal={isOpenModal}
-        setIsOpenModal={setIsOpenModal}
-        onSubmit={handleModal}
-      /> */}
-      <div className="w-3/5 h-full bg-Banner">
-        <Breadcrumb id={breadcrumbsData[0].id} categoryProduct={breadcrumbsData[0].categoryProduct} productName={breadcrumbsData[0].productName}/>
-      </div>
-      <div className="bg-Surface">
-        <SignInButton/>
-      </div>
+    <div className="flex justify-center items-center w-[1920px] h-[1080px] bg-OutlineFocus">
+      <Header/>
     </div>
   );
 }
